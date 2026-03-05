@@ -63,4 +63,3 @@ This project was created to practice:
 ## Contributors
 - Team 5 members of the SWD2_S1 Project
 - Contributions include HTML structure, CSS styling, and JavaScript functionality.
--
