@@ -44,13 +44,7 @@ nav{
     color:#556B2F;
 }
 
-.sign{
-    padding:8px 18px;
-    border:1px solid #333;
-    border-radius: 25px;
-    background:transparent;
-    cursor:pointer;
-}
+
 
 /* HOME SECTION */
 
@@ -61,6 +55,14 @@ nav{
     align-items:center;
     padding:80px;
     gap:60px;
+}
+
+.sign{
+    padding:8px 18px;
+    border:1px solid #333;
+    border-radius: 25px;
+    background:transparent;
+    cursor:pointer;
 }
 
 /* TEXT */
