@@ -1,7 +1,10 @@
 import React, { useState, useRef, useEffect } from "react"; 
 import { useLocation } from "react-router-dom";
 import axios from "axios";
-import { doc, addDoc, collection, setDoc, serverTimestamp } from "firebase/firestore";
+import { doc, addDoc, collection, setDoc, serverTimestamp,query,
+  where,
+  getDocs,
+  deleteDoc, } from "firebase/firestore";
 import { toast } from "react-toastify";
 import { auth, db } from "../../firebase";
 import { getAuth } from "firebase/auth";
@@ -213,6 +216,23 @@ export default function Flights() {
         origin: fromText,
         destination: toText,
       });
+
+      // delete from saved if booked
+      const savedQuery = query(
+        collection(db, "savedFlights"),
+        where("userId", "==", user.uid),
+      );
+
+      const savedSnapshot = await getDocs(savedQuery);
+
+      const savedDoc = savedSnapshot.docs.find(
+        (d) => d.data().flight?.id === flight?.id,
+      );
+
+      if (savedDoc) {
+        await deleteDoc(doc(db, "savedFlights", savedDoc.id));
+      }
+      
       toast.success("Trip booked successfully! Added to your Trips page 🌎");
     } catch (err) {
       console.log("BOOKING ERROR:", err);
