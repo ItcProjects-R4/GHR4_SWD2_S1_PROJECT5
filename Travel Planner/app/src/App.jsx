@@ -17,6 +17,8 @@ import Profile from './components/Profile/Profile'
 import Dashboard from './components/Dashboard/Dashboard'
 import SavedFlights from './components/SavedFlights/SavedFlights'
 import PastTrips from './components/PastTrips/PastTrips'
+import TripsWorkspace from './components/TripsWorkspace/TripsWorkspace'
+import PlannerWorkspace from './components/PlannerWorkspace/PlannerWorkspace'
 import UserContextProvider from './context/userContext';
 import TripsContextProvider from './context/TripsContext';
 
@@ -34,6 +36,8 @@ function App() {
       {path:'profile', element:<ProtectedRoutes> <Profile/> </ProtectedRoutes>},
       {path:'savedflights', element: <ProtectedRoutes> <SavedFlights/> </ProtectedRoutes>},
       {path:'pastTrips', element: <ProtectedRoutes> <PastTrips/> </ProtectedRoutes>},
+      {path:'tripsWorkspace', element: <ProtectedRoutes> <TripsWorkspace/> </ProtectedRoutes>},
+      {path:'planner', element: <ProtectedRoutes> <PlannerWorkspace/> </ProtectedRoutes>},
       {path:'*', element:<NotFound/>},
     ]
 
