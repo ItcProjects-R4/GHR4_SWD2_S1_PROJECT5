@@ -57,6 +57,11 @@ export default function Flights() {
 
   const timeoutRef = useRef(null); //stores debounce(waiting until the user stops writing) timer
 
+  // Scroll to top when page loads
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, []);
+
   useEffect(() => {
     if (location.state?.queryTo) {
       setToText(location.state.queryTo);
