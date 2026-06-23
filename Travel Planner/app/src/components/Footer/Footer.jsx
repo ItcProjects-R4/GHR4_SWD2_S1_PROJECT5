@@ -25,16 +25,16 @@ export default function Footer() {
             <h6 className={styles.columnHeading}>QUICK LINKS</h6>
             <div className="d-flex flex-column gap-2">
               <Link className={styles.footerLink} to="/flights">
-                ✈ Flights
+                 Flights
               </Link>
               <Link className={styles.footerLink} to="/destinations">
-                🌍 Destinations
+                 Destinations
               </Link>
-              <Link className={styles.footerLink} to="/ai">
-                🤖 AI Planner
+              <Link className={styles.footerLink} to="/planner">
+                 AI Planner
               </Link>
               <Link className={styles.footerLink} to="/dashboard">
-                📊 Dashboard
+                 Dashboard
               </Link>
             </div>
           </div>
