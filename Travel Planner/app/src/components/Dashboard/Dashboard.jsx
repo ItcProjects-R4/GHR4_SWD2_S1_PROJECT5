@@ -466,15 +466,15 @@ export default function Dashboard() {
                           className={styles.actionBtn}
                           onClick={() => navigate("/flights")}
                         >
-                          🔍 Search flights
+                           Search flights
                         </button>
                       </div>
                       <div className="col-6">
                         <button
                           className={styles.actionBtn}
-                          onClick={() => navigate("/tripPlanner")}
+                          onClick={() => navigate("/planner")}
                         >
-                          🤖 Plan a trip
+                           Plan a trip
                         </button>
                       </div>
                       <div className="col-6">
@@ -482,7 +482,7 @@ export default function Dashboard() {
                           className={styles.actionBtn}
                           onClick={() => navigate("/destinations")}
                         >
-                          🌍 Destinations
+                           Destinations
                         </button>
                       </div>
                       <div className="col-6">
@@ -490,7 +490,7 @@ export default function Dashboard() {
                           className={styles.actionBtn}
                           onClick={() => navigate("/profile")}
                         >
-                          👤 Edit profile
+                           Edit profile
                         </button>
                       </div>
                     </div>
@@ -504,4 +504,3 @@ export default function Dashboard() {
     </>
   );
 }
-
