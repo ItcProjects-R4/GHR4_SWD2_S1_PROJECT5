@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  min-height: 88vh;
+  min-height: 95vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,16 +12,31 @@
 .heroBg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 80% 55% at 50% -5%, rgba(26, 127, 212, 0.10) 0%, transparent 65%),
-    linear-gradient(180deg, #eef4fb 0%, #dceefb 40%, #eef4fb 100%);
   z-index: 0;
 }
 
+/* Dark overlay so text is always readable */
 .heroBg::after {
   content: '';
   position: absolute;
   inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 18, 40, 0.55) 0%,
+    rgba(10, 30, 60, 0.45) 50%,
+    rgba(6, 18, 40, 0.65) 100%
+  );
+  z-index: 1;
 }
+
+.heroBgImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+
+}
+
 
 .heroContent {
   position: relative;
@@ -33,14 +48,15 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #e8f3fc;
-  border: 1px solid rgba(26, 127, 212, 0.25);
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(8px);
   border-radius: 999px;
   padding: 6px 18px;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 2px;
-  color: #1a7fd4;
+  color: #e0f2fe;
   margin-bottom: 28px;
   text-transform: uppercase;
 }
@@ -52,33 +68,34 @@
   letter-spacing: -2px;
   margin-bottom: 20px;
   color: #ffffff;
-  text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  text-shadow: 0 4px 24px rgba(0,0,0,0.5);
 }
 
-.heroTitle .acc {
-  color: #60a5fa;
-  text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+.acc {
+  color: #1153a4;
+  text-shadow: 0 4px 20px rgba(96, 165, 250, 0.5);
 }
 
 .heroSub {
   font-size: 17px;
-  color: #f8fafc;
+  color: rgba(255,255,255,0.85);
   margin-bottom: 44px;
   font-weight: 500;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  letter-spacing: 0.3px;
 }
 
 .searchStrip {
   display: flex;
   align-items: center;
   gap: 0;
-  background: #fff;
-  border: 1.5px solid #d0e3f5;
+  background: rgba(255,255,255,0.95);
+  border: 1.5px solid rgba(255,255,255,0.6);
   border-radius: 16px;
   padding: 8px;
   max-width: 620px;
   margin: 0 auto 56px;
-  box-shadow: 0 4px 24px rgba(26, 127, 212, 0.13);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  backdrop-filter: blur(8px);
 }
 
 .searchStrip input {
@@ -105,6 +122,11 @@
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
+  transition: background 0.2s;
+}
+
+.searchStrip button:hover {
+  background: #1565b8;
 }
 
 .features {
@@ -117,19 +139,22 @@
 
 .featCard {
   position: relative;
-  background: #fff;
-  border: 1.5px solid #d0e3f5;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.22);
   border-radius: 16px;
+  height: 140px;
   padding: 22px 18px;
   cursor: pointer;
-  transition: box-shadow .2s, border-color .2s;
-  box-shadow: 0 2px 16px rgba(26, 127, 212, 0.08);
+  transition: box-shadow .2s, border-color .2s, background .2s;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
   overflow: hidden;
+  backdrop-filter: blur(10px);
 }
 
 .featCard:hover {
-  border-color: #0ea5e9;
-  box-shadow: 0 4px 24px rgba(26, 127, 212, 0.13);
+  border-color: rgba(96, 165, 250, 0.6);
+  background: rgba(255,255,255,0.3);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.25);
 }
 
 .featCardBgImg {
@@ -139,17 +164,18 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.15;
+  opacity: 0.18;
   transition: opacity 0.3s;
   z-index: 0;
 }
 
 .featCard:hover .featCardBgImg {
-  opacity: 0.3;
+  opacity: 0.30;
 }
 
 .featContent {
   position: relative;
+  top: 22px;
   z-index: 1;
 }
 
@@ -157,7 +183,7 @@
   width: 42px;
   height: 42px;
   border-radius: 10px;
-  background: #e8f3fc;
+  background: rgba(255,255,255,0.15);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -170,15 +196,16 @@
   font-weight: 800;
   letter-spacing: .5px;
   margin-bottom: 5px;
-  color: #0f172a;
+  color: #ffffff;
 }
 
 .featDesc {
   font-size: 11px;
-  color: #64748b;
+  color: rgba(255,255,255,0.7);
   line-height: 1.5;
 }
 
+/* ── Stats bar ── */
 .stats {
   display: flex;
   justify-content: center;
@@ -207,6 +234,7 @@
   margin-top: 4px;
 }
 
+/* ── Sections ── */
 .section {
   padding: 72px 56px;
   background: #eef4fb;
@@ -234,6 +262,7 @@
   margin-bottom: 40px;
 }
 
+/* ── Dest cards ── */
 .destGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -246,12 +275,13 @@
   background: #fff;
   border: 1.5px solid #d0e3f5;
   box-shadow: 0 2px 16px rgba(26, 127, 212, 0.08);
-  transition: box-shadow .2s;
+  transition: box-shadow .2s, transform .2s;
   cursor: pointer;
 }
 
 .destCard:hover {
-  box-shadow: 0 4px 24px rgba(26, 127, 212, 0.13);
+  box-shadow: 0 8px 28px rgba(26, 127, 212, 0.16);
+  transform: translateY(-3px);
 }
 
 .destImg {
@@ -264,17 +294,9 @@
   position: relative;
 }
 
-.dubai {
-  background: linear-gradient(135deg, #fde68a, #f59e0b);
-}
-
-.paris {
-  background: linear-gradient(135deg, #bfdbfe, #3b82f6);
-}
-
-.bali {
-  background: linear-gradient(135deg, #bbf7d0, #16a34a);
-}
+.dubai  { background: linear-gradient(135deg, #fde68a, #f59e0b); }
+.paris  { background: linear-gradient(135deg, #bfdbfe, #3b82f6); }
+.bali   { background: linear-gradient(135deg, #bbf7d0, #16a34a); }
 
 .destBadge {
   position: absolute;
@@ -289,45 +311,13 @@
   color: #fff;
 }
 
-.destBadge.hot {
-  background: #d97706;
-}
+.destBadge.hot { background: #d97706; }
+.destBadge.top { background: #1a7fd4; }
 
-.destBadge.top {
-  background: #1a7fd4;
-}
-
-.destInfo {
-  padding: 16px 18px;
-}
-
-.destName {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 4px;
-  color: #0f172a;
-}
-
-.destMeta {
-  font-size: 12px;
-  color: #64748b;
-  display: flex;
-  gap: 12px;
-}
-
-.destPrice {
-  font-size: 15px;
-  font-weight: 700;
-  color: #1a7fd4;
-  margin-top: 8px;
-}
-
-.heroBgImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 1;
-}
+.destInfo    { padding: 16px 18px; }
+.destName    { font-size: 16px; font-weight: 700; margin-bottom: 4px; color: #0f172a; }
+.destMeta    { font-size: 12px; color: #64748b; display: flex; gap: 12px; }
+.destPrice   { font-size: 15px; font-weight: 700; color: #1a7fd4; margin-top: 8px; }
 
 .destImgContainer {
   position: relative;
@@ -340,13 +330,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s;
+  transition: transform 0.35s;
 }
 
-.destCard:hover .destRealImg {
-  transform: scale(1.05);
-}
+.destCard:hover .destRealImg { transform: scale(1.06); }
 
+/* ── Live flights ── */
 .liveFlightsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -360,13 +349,15 @@
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(26, 127, 212, 0.06);
+  transition: box-shadow .2s, transform .2s;
 }
 
-.lfImageContainer {
-  width: 100%;
-  height: 140px;
-  overflow: hidden;
+.liveFlightCard:hover {
+  box-shadow: 0 8px 28px rgba(26, 127, 212, 0.14);
+  transform: translateY(-2px);
 }
+
+.lfImageContainer { width: 100%; height: 140px; overflow: hidden; }
 
 .lfImage {
   width: 100%;
@@ -375,13 +366,9 @@
   transition: transform 0.3s;
 }
 
-.liveFlightCard:hover .lfImage {
-  transform: scale(1.05);
-}
+.liveFlightCard:hover .lfImage { transform: scale(1.05); }
 
-.lfContent {
-  padding: 20px;
-}
+.lfContent { padding: 20px; }
 
 .lfHeader {
   display: flex;
@@ -391,17 +378,8 @@
   border-bottom: 1px dashed #e2ecf8;
 }
 
-.lfAirline {
-  font-size: 14px;
-  font-weight: 600;
-  color: #334155;
-}
-
-.lfPrice {
-  font-size: 18px;
-  font-weight: 800;
-  color: #1a7fd4;
-}
+.lfAirline { font-size: 14px; font-weight: 600; color: #334155; }
+.lfPrice   { font-size: 18px; font-weight: 800; color: #1a7fd4; }
 
 .lfBody {
   display: flex;
@@ -409,22 +387,9 @@
   align-items: center;
 }
 
-.lfNode {
-  text-align: center;
-}
-
-.lfNode h4 {
-  font-size: 22px;
-  font-weight: 800;
-  margin: 0;
-  color: #0f172a;
-}
-
-.lfNode p {
-  font-size: 12px;
-  margin: 4px 0 0 0;
-  color: #64748b;
-}
+.lfNode { text-align: center; }
+.lfNode h4 { font-size: 22px; font-weight: 800; margin: 0; color: #0f172a; }
+.lfNode p  { font-size: 12px; margin: 4px 0 0 0; color: #64748b; }
 
 .lfTrack {
   flex: 1;
@@ -437,11 +402,7 @@
   margin: 0 15px;
 }
 
-.lfTrack span {
-  font-size: 11px;
-  color: #64748b;
-  margin-bottom: 8px;
-}
+.lfTrack span { font-size: 11px; color: #64748b; margin-bottom: 8px; }
 
 .lfLine {
   width: 100%;
