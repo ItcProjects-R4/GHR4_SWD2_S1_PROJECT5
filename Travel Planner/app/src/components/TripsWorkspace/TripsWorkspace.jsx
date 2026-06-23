@@ -84,7 +84,7 @@ export default function TripsWorkspace() {
   };
 
   const handleEditPlan = (trip) => {
-    navigate("/tripPlanner", {
+    navigate("/planner", {
       state: { query: trip.input, planData: trip.result },
     });
   };
