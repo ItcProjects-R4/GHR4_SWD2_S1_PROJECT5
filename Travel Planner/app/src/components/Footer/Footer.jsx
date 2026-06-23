@@ -54,7 +54,7 @@ export default function Footer() {
         {/* BOTTOM SECTION */}
         <div className={styles.bottomBar}>
           <p className={styles.copyrightText}>
-            © 2026 Travel AI Planner — Built for educational purposes
+            © 2026 Travel AI Planner - Built for educational purposes
           </p>
 
           <div className="d-flex gap-3 mt-2 mt-md-0">
