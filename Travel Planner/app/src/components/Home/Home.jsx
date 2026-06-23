@@ -2,6 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import styles from "./Home.module.css";
+import background from "../../assets/images/background.jpg"
+import bali from "../../assets/images/bali.png"
+import hero from "../../assets/images/hero.png"
+import destinations from "../../assets/images/destinations.png"
+import paris from "../../assets/images/paris.png"
+import dubai from "../../assets/images/dubai.png"
+import flights from "../../assets/images/flights.png"
 
 export default function Home() {
   const navigate = useNavigate();
@@ -63,7 +70,7 @@ export default function Home() {
     <div>
       <section className={styles.hero}>
         <div className={styles.heroBg}>
-          <img className={styles.heroBgImage} src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2600&auto=format&fit=crop" alt="Beautiful landscape" />
+          <img className={styles.heroBgImage} src={background} alt="Beautiful landscape" />
         </div>
         <div className={styles.heroContent}>
 
@@ -71,40 +78,36 @@ export default function Home() {
             PLAN YOUR<br />
             <span className={styles.acc}>NEXT TRIP</span>
           </h1>
-          <p className={styles.heroSub}>Flights · Destinations · AI Recommendations · Travel Insights</p>
+          <p className={styles.heroSub}>Flights - Destinations - AI Recommendations - Travel Insights</p>
           <div className={styles.searchStrip}>
             <input placeholder="Where do you want to go?" />
             <button onClick={() => navigate('/flights')}>Explore →</button>
           </div>
           <div className={styles.features}>
             <div className={styles.featCard} onClick={() => navigate('/flights')}>
-              <img className={styles.featCardBgImg} src="/images/flights.png" alt="Flights" />
+              <img className={styles.featCardBgImg} src={flights} alt="Flights" />
               <div className={styles.featContent}>
-                <div className={styles.featIcon}>✈️</div>
                 <div className={styles.featTitle}>FLIGHTS</div>
                 <div className={styles.featDesc}>Search one-way & round-trip flights worldwide</div>
               </div>
             </div>
             <div className={styles.featCard} onClick={() => navigate('/destinations')}>
-              <img className={styles.featCardBgImg} src="/images/destinations.png" alt="Destinations" />
+              <img className={styles.featCardBgImg} src={destinations} alt="Destinations" />
               <div className={styles.featContent}>
-                <div className={styles.featIcon}>🌍</div>
                 <div className={styles.featTitle}>DESTINATIONS</div>
                 <div className={styles.featDesc}>Discover top destinations curated for you</div>
               </div>
             </div>
             <div className={styles.featCard} onClick={() => navigate('/tripPlanner')}>
-              <img className={styles.featCardBgImg} src="/images/paris.png" alt="AI Planner" />
+              <img className={styles.featCardBgImg} src={paris} alt="AI Planner" />
               <div className={styles.featContent}>
-                <div className={styles.featIcon}>🤖</div>
                 <div className={styles.featTitle}>AI PLANNER</div>
                 <div className={styles.featDesc}>Generate a full trip plan powered by Gemini AI</div>
               </div>
             </div>
             <div className={styles.featCard} onClick={() => navigate('/dashboard')}>
-              <img className={styles.featCardBgImg} src="/images/bali.png" alt="Dashboard" />
+              <img className={styles.featCardBgImg} src={bali} alt="Dashboard" />
               <div className={styles.featContent}>
-                <div className={styles.featIcon}>📊</div>
                 <div className={styles.featTitle}>DASHBOARD</div>
                 <div className={styles.featDesc}>Track saved flights and past trips in one view</div>
               </div>
@@ -127,7 +130,7 @@ export default function Home() {
         <div className={styles.destGrid}>
           <div className={styles.destCard} onClick={() => navigate('/destinations', { state: { query: 'Dubai' } })}>
             <div className={styles.destImgContainer}>
-              <img src="/images/dubai.png" className={styles.destRealImg} alt="Dubai" />
+              <img src={dubai} className={styles.destRealImg} alt="Dubai" />
               <div className={`${styles.destBadge} ${styles.hot}`}>HOT</div>
             </div>
             <div className={styles.destInfo}>
@@ -138,7 +141,7 @@ export default function Home() {
           </div>
           <div className={styles.destCard} onClick={() => navigate('/destinations', { state: { query: 'Paris' } })}>
             <div className={styles.destImgContainer}>
-              <img src="/images/paris.png" className={styles.destRealImg} alt="Paris" />
+              <img src={paris} className={styles.destRealImg} alt="Paris" />
               <div className={`${styles.destBadge} ${styles.top}`}>TOP</div>
             </div>
             <div className={styles.destInfo}>
@@ -149,7 +152,7 @@ export default function Home() {
           </div>
           <div className={styles.destCard} onClick={() => navigate('/destinations', { state: { query: 'Bali' } })}>
             <div className={styles.destImgContainer}>
-              <img src="/images/bali.png" className={styles.destRealImg} alt="Bali" />
+              <img src={bali} className={styles.destRealImg} alt="Bali" />
             </div>
             <div className={styles.destInfo}>
               <div className={styles.destName}>Bali, Indonesia</div>
@@ -172,11 +175,11 @@ export default function Home() {
               const leg = flight?.legs?.[0];
               const destCity = (leg?.destination?.city || "").toLowerCase();
               
-              let imgSrc = '/images/flights.png';
-              if (destCity.includes('paris')) imgSrc = '/images/paris.png';
-              else if (destCity.includes('london')) imgSrc = '/images/hero.png';
-              else if (destCity.includes('bali')) imgSrc = '/images/bali.png';
-              else if (destCity.includes('dubai')) imgSrc = '/images/dubai.png';
+              let imgSrc = {flights};
+              if (destCity.includes('paris')) imgSrc = {paris};
+              else if (destCity.includes('london')) imgSrc = {hero};
+              else if (destCity.includes('bali')) imgSrc = {bali};
+              else if (destCity.includes('dubai')) imgSrc = {dubai};
 
               return (
                 <div key={idx} className={styles.liveFlightCard} onClick={() => navigate('/destinations', { state: { query: leg?.destination?.city || destCity } })} style={{cursor: 'pointer'}}>
