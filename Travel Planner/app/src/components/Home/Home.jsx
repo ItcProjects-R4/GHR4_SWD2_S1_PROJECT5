@@ -102,7 +102,7 @@ export default function Home() {
                 <div className={styles.featDesc}>Discover top destinations curated for you</div>
               </div>
             </div>
-            <div className={styles.featCard} onClick={() => navigate('/tripPlanner')}>
+            <div className={styles.featCard} onClick={() => navigate('/planner')}>
               <img className={styles.featCardBgImg} src={paris} alt="AI Planner" />
               <div className={styles.featContent}>
                 <div className={styles.featTitle}>AI PLANNER</div>
