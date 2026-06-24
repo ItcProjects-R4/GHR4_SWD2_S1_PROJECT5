@@ -227,7 +227,7 @@ export default function Dashboard() {
                 </div>
               </Link>
 
-              <Link to="/tripPlanner" className={styles.sidebarLink}>
+              <Link to="/planner" className={styles.sidebarLink}>
                 <div className="d-flex align-items-center gap-2">
                   <span role="img" aria-label="ai">
                     🤖
