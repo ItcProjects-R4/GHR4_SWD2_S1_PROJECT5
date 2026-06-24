@@ -172,6 +172,25 @@ export default function Flights() {
       toast.error("You must be logged in");
       return;
     }
+    // prevent dublicate saved flight
+    const q = query(
+  collection(db, "savedFlights"),
+  where("userId", "==", user.uid)
+);
+
+const snapshot = await getDocs(q);
+
+const alreadySaved = snapshot.docs.some((doc) => {
+  const savedFlight = doc.data().flight;
+
+  return savedFlight?.id === flight?.id;
+});
+
+if (alreadySaved) {
+  toast.warning("Flight already saved!");
+  return;
+}
+
 
     try {
       await addDoc(collection(db, "savedFlights"), { //creates a new document in Firestore called savedflights
