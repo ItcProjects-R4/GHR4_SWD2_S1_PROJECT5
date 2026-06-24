@@ -209,6 +209,7 @@ export default function SavedFlights() {
               const departureDate = leg?.departure
                 ? new Date(leg.departure)
                 : null;
+            const isExpired = departureDate && departureDate <= new Date();
               const formattedTimeDep = departureDate
                 ? departureDate.toLocaleTimeString([], {
                     hour: "2-digit",
@@ -320,8 +321,9 @@ export default function SavedFlights() {
                         <button
                           className={styles.bookBtn}
                           onClick={() => bookFlight(t.flight, t.id)}
+                          disabled={isExpired}
                         >
-                          Book now
+                          {isExpired ? "Expired" : "Book now"}
                         </button>
                         <button
                           onClick={() => deleteTrip(t.id)}
