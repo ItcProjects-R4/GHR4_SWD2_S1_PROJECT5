@@ -85,7 +85,7 @@ export default function Home() {
           <p className={styles.heroSub}>Flights - Destinations - AI Recommendations - Travel Insights</p>
           <div className={styles.searchStrip}>
             <input placeholder="Where do you want to go?" />
-            <button onClick={() => navigate('/flights')}>Explore →</button>
+            <button onClick={() => navigate('/destinations')}>Explore →</button>
           </div>
           <div className={styles.features}>
             <div className={styles.featCard} onClick={() => navigate('/flights')}>
