@@ -4,6 +4,7 @@ import axios from "axios";
 import styles from "./Home.module.css";
 import background from "../../assets/images/background.jpg"
 import bali from "../../assets/images/bali.png"
+
 import hero from "../../assets/images/hero.png"
 import destinations from "../../assets/images/destinations.png"
 import paris from "../../assets/images/paris.png"
@@ -12,6 +13,8 @@ import flights from "../../assets/images/flights.png"
 
 export default function Home() {
   const navigate = useNavigate();
+  
+
   const [liveFlights, setLiveFlights] = useState([]);
   const API_KEY = import.meta.env.VITE_RAPIDAPI_KEY;
 
@@ -65,6 +68,7 @@ export default function Home() {
     };
     fetchLiveFlights();
   }, [API_KEY]);
+
 
   return (
     <div>
@@ -139,11 +143,13 @@ export default function Home() {
               <div className={styles.destPrice}>from $340</div>
             </div>
           </div>
+
           <div className={styles.destCard} onClick={() => navigate('/destinations', { state: { query: 'Paris' } })}>
             <div className={styles.destImgContainer}>
-              <img src={paris} className={styles.destRealImg} alt="Paris" />
+              <img src={paris} className={styles.destRealImg} alt="Paris" />   
               <div className={`${styles.destBadge} ${styles.top}`}>TOP</div>
             </div>
+
             <div className={styles.destInfo}>
               <div className={styles.destName}>Paris, France</div>
               <div className={styles.destMeta}><span>🌤️ 22°C</span><span>✈️ 5h avg</span></div>
@@ -175,11 +181,13 @@ export default function Home() {
               const leg = flight?.legs?.[0];
               const destCity = (leg?.destination?.city || "").toLowerCase();
               
-              let imgSrc = {flights};
-              if (destCity.includes('paris')) imgSrc = {paris};
-              else if (destCity.includes('london')) imgSrc = {hero};
-              else if (destCity.includes('bali')) imgSrc = {bali};
-              else if (destCity.includes('dubai')) imgSrc = {dubai};
+              let imgSrc;
+              if (destCity.includes('paris')) imgSrc = paris;
+              else if (destCity.includes('london')) imgSrc = hero;
+              else if (destCity.includes('bali')) imgSrc = bali;
+              else if (destCity.includes('dubai')) imgSrc = dubai;
+              <img className={styles.featCardBgImg} src= {imgSrc} alt="Destinations" />
+
 
               return (
                 <div key={idx} className={styles.liveFlightCard} onClick={() => navigate('/destinations', { state: { query: leg?.destination?.city || destCity } })} style={{cursor: 'pointer'}}>
