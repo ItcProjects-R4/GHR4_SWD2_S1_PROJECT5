@@ -1,0 +1,8 @@
+{
+  "name": "Destinations Travel Hub",
+  "description": "An interactive travel explorer module featuring countries details, dynamic weather forecasts, landmark insights, handpicked stays, search, filters, and dynamic AI-generated itineraries using the Gemini API.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
