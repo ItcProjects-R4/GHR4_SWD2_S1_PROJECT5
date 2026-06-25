@@ -29,11 +29,7 @@ import { useEffect } from "react";
 
 export default function Destinations() {
 const location = useLocation();
-// useEffect(() => {
-//   if (location.state && location.state.countryData) {
-//     viewCountryDetails(location.state.countryData);
-//   }
-// }, [location.state]);
+
 
 
 const [activeTab, setActiveTab] = useState("countries");
