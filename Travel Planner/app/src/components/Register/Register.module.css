@@ -75,6 +75,7 @@
 .brandText {
   font-weight: 700;
   margin: 0;
+  color: #c6cada;
   font-size: 1.5rem;
   letter-spacing: 2px;
 }
@@ -82,6 +83,7 @@
 .mainDisplayTitle {
   font-size: 3.5rem;
   font-weight: 800;
+  color: #c6cada;
   line-height: 1.1;
   margin-bottom: 1.5rem;
   letter-spacing: -1px;
