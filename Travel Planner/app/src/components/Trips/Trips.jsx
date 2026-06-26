@@ -37,7 +37,15 @@ export default function Trips() {
           ...doc.data(),
         }));
 
-        setTrips(data);
+        const now = new Date();
+
+        const upcomingTrips = data.filter((trip) => {
+          const departure = trip.flightDetails?.legs?.[0]?.departure;
+
+          return departure && new Date(departure) > now;
+        });
+
+        setTrips(upcomingTrips);
       } catch (err) {
         console.log(err);
         toast.error("Failed to load booked trips");
