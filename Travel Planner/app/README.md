@@ -74,7 +74,7 @@ The project demonstrates modern frontend development practices including reusabl
 - Display User Information
 - Firebase User Details
 
-### 📱 Responsive Design
+###  Responsive Design
 
 - Desktop Support
 - Tablet Support
@@ -306,7 +306,6 @@ Build the application:
 npm run build
 ```
 
-The generated **dist** folder contains the production files.
 
 ---
 
@@ -339,15 +338,11 @@ The application has been tested using:
 
 ---
 
-#  Author
 
-**Your Name**
-
-Computer Science Student
 
 Graduation Project
 
-2025
+2026
 
 ---
 
@@ -359,5 +354,5 @@ This project was developed for educational and academic purposes.
 
 #  Acknowledgements
 
-Special thanks to our project supervisor, faculty members, and everyone who contributed to the successful completion of this project.
+Special thanks to our project supervisor, DEPI, and everyone who contributed to the successful completion of this project.
 
