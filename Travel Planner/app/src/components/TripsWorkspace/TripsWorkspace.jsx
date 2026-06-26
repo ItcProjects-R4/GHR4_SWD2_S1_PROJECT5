@@ -61,7 +61,16 @@ export default function TripsWorkspace() {
           id: doc.id,
           ...doc.data(),
         }));
-        setBookedFlights(bookedData);
+        //show upcoming trip only
+        const now = new Date();
+
+        const upcomingTrips = bookedData.filter((trip) => {
+          const departure = trip.flightDetails?.legs?.[0]?.departure;
+
+          return departure && new Date(departure) > now;
+        });
+        setBookedFlights(upcomingTrips);
+        
       } catch (err) {
         console.log(err);
         toast.error("Failed to load booked flights");
