@@ -10,11 +10,11 @@
 
 /* LEFT HERO COLUMN (THE IMAGE GRID LAYER) */
 .heroColumn {
-  flex: 1;
+  flex: 1.4;
   position: relative;
   display: flex;
   align-items: center;
-  padding: 4rem;
+  padding: 2rem 2rem 2rem 3rem;
   overflow: hidden;
 }
 
@@ -55,6 +55,7 @@
 .brandText {
   font-weight: 700;
   margin: 0;
+  color: #c6cada;
   font-size: 1.5rem;
   letter-spacing: 2px;
 }
@@ -63,6 +64,7 @@
   font-size: 3.5rem;
   font-weight: 800;
   line-height: 1.1;
+  color: #c6cada;
   margin-bottom: 1.5rem;
   letter-spacing: -1px;
 }
@@ -101,10 +103,10 @@
   font-weight: bold;
 }
 
-/* RIGHT COLUMN (FORM BASE COAT ELEMENTS) */
-/* Increased width from 450px to 540px to extend further out to the left */
+
+/* RIGHT COLUMN (TIGHT & CRISP WIDTH HULL) */
 .formColumn {
-  width: 540px; 
+  flex: 0.9; 
   background-color: #ffffff;
   display: flex;
   align-items: center;
@@ -113,10 +115,9 @@
   z-index: 2;
 }
 
-/* Expanded max-width from 360px to 420px for wider input fields */
 .formContainerWidth {
   width: 100%;
-  max-width: 420px;
+  max-width: 360px;
 }
 
 /* TYPOGRAPHY STRUCTURE */
@@ -142,7 +143,7 @@
   margin-bottom: 0.5rem;
 }
 
-/* FORM FIELDS AND EMBEDDED LUCIDE ICONS */
+/* FORM FIELDS */
 .formInputField {
   background-color: #f8fafc !important;
   border: 1px solid #e2e8f0 !important;
@@ -155,7 +156,7 @@
 }
 
 .formInputField:focus {
-  border-color: #2563eb !important;
+  border-color: #0471AB !important;
   background-color: #ffffff !important;
 }
 
@@ -168,7 +169,7 @@
   pointer-events: none;
 }
 
-/* SUBMIT BUTTON LAYER ACCENT */
+/* SUBMIT BUTTON ACCENT */
 .submitButton {
   background-color: #0471AB !important;
   border: none !important;
@@ -182,26 +183,23 @@
 }
 
 .submitButton:hover {
-  background-color: #0471AB !important;
+  background-color: #035b8a !important;
 }
 
-/* LOWER INTERACTIVE ROUTER LINKS */
-.forgotPasswordLink {
-  color: #0471AB;
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
-.forgotPasswordLink:hover {
-  text-decoration: underline;
+/* LOWER INTERACTIVE FOOTNOTES */
+.termsAgreementFootnote {
+  color: #64748b;
+  font-size: 0.75rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  line-height: 1.4;
 }
 
 .switchScreenFootnote {
   color: #64748b;
   font-size: 0.9rem;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .inlineActionLink {
