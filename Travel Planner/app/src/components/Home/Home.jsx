@@ -92,7 +92,7 @@ export default function Home() {
               <img className={styles.featCardBgImg} src={flights} alt="Flights" />
               <div className={styles.featContent}>
                 <div className={styles.featTitle}>FLIGHTS</div>
-                <div className={styles.featDesc}>Search one-way & round-trip flights worldwide</div>
+                <div className={styles.featDesc}>Search one-way flights worldwide</div>
               </div>
             </div>
             <div className={styles.featCard} onClick={() => navigate('/destinations')}>
